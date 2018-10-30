@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models");
+const db = require("../models/index.js");
 
 router.get("/api/user", function(req,res){
     res.send("Get Users")
