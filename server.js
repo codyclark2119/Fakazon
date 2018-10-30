@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static("client/public"));
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactfullstack");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fakazondb");
 
 const userRoutes = require("./routes/user.js")
 app.use(userRoutes);
