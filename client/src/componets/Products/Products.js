@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import API from "../../API/users.js";
 
 export default class Login extends Component {
     state = {
+        productList: [],
         product: "",
         seller: "",
         price: "",
@@ -12,12 +12,17 @@ export default class Login extends Component {
         date: new Date(Date.now())
     }
 
-    
+    productSelect = (event) => {
+        event.preventDefault();
+      
+    }
 
     render(){
         return(
-            <div>
-                
+            <div className="container">
+                <jumbotron>
+                    
+                </jumbotron>
             </div>
         )
     }

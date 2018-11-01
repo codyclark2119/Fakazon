@@ -39,4 +39,4 @@ router.delete("/api/user/:id", function(req,res){
     res.send("Delete Users")
 });
 
-module.exports = router;
+module.exports = userRoutes;

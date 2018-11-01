@@ -1,5 +1,5 @@
 {
-  "name": "testyy",
+  "name": "fakazon",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -17,7 +17,6 @@
     "cors": "^2.8.4",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
-    "kill-port": "^1.3.2",
     "mongoose": "^5.3.6"
   }
 }
