@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Login from "./componets/Login.js";
+import Header from "./componets/Header.js";
 import './App.css';
 
 class App extends Component {
