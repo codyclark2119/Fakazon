@@ -10,7 +10,7 @@ const API = {
         console.log("Creating User");
         return axios.get("/api/users", data);
     },
-    updateUser:function(id){
+    updateUser:function(data){
         console.log("Updating User");
         return axios.put("/api/users/update", data);
     },
