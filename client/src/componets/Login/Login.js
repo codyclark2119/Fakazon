@@ -3,7 +3,7 @@ import API from "../../API/API.js";
 
 export default class Login extends Component {
     state = {
-        username:"",
+        email:"",
         password:""
     }
 
