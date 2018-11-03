@@ -23,11 +23,38 @@ export default class Login extends Component {
 
     render(){
         return(
+            <div className="container-fluid">
             <form>
-                <input onChange={this.captureInput} name="username"/>
-                <input onChange={this.captureInput} name="password"/>
-                <button onClick={this.handleSignUp}>Submit</button>
+                <div className="form-group">
+                    <label>Email address</label>
+                    <input 
+                        name="email" 
+                        type="email" 
+                        className="form-control" 
+                        id="exampleInputEmail1" 
+                        aria-describedby="emailHelp" 
+                        placeholder="Enter email" 
+                        onChange={this.captureInput} 
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Password</label>
+                    <input 
+                        name="password" 
+                        type="password" 
+                        className="form-control" 
+                        id="exampleInputPassword1" 
+                        placeholder="Password" 
+                        onChange={this.captureInput} 
+                    />
+                </div>
+                    <button 
+                        type="submit" 
+                        className="btn btn-primary" 
+                        onClick={this.handleLogin}>Submit
+                    </button>
             </form>
+        </div>
         )
     }
 }
