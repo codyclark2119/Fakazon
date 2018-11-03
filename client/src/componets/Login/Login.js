@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import API from "../../API/API.js";
+import API from "../../API/auth.js";
 
 export default class Login extends Component {
     state = {
@@ -7,9 +7,9 @@ export default class Login extends Component {
         password:""
     }
 
-    handleSignUp = (event) => {
+    handleLogin = (event) => {
         event.preventDefault();
-        console.log("I'm signing up baby", this.state);
+        console.log("I'm logging in baby", this.state);
         API.login(this.state).then(function(response){
             console.log(response);
         })

@@ -13,6 +13,7 @@ router.post("/api/login", function(req,res){
                 res.send(error)
             }
             res.json(user);
+            console.log("hey");
         });
     })
 });
