@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = {
     getItems:function(){
-        return axios.get("/api/products")
+        return axios.get("/")
     },
     login:function(newUser){
         return axios.post("/login", newUser)
