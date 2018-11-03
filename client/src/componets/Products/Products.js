@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../API/API.js";
+import API from "../../API/products.js";
 
 export default class Products extends Component {
     state = {
@@ -11,7 +11,8 @@ export default class Products extends Component {
             .then(res =>
                 this.setState({
                     productList: res.data
-                })
+                }),
+                console.log(this.state.productList)
             )
             .catch(err => console.log(err));
     }
@@ -36,6 +37,7 @@ export default class Products extends Component {
         return (
             <div className="container">
                 <h1>It works</h1>
+                
             </div>
         )
     }

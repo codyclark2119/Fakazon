@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../../models/index.js");
 
-router.get("/", function(req,res){
+router.get("/api/products", function(req,res){
     db.Item.find({}, function (error, response) {
         if (error) {
             console.log(error);
@@ -10,6 +10,7 @@ router.get("/", function(req,res){
         }
         else {
             res.json(response);
+            console.log(response);
         }
     })
 });
