@@ -3,8 +3,6 @@ const mongoose = require("mongoose");
 const db = require("./models");
 const itemSeed = require("./seed/seed.js");
 
-const kill = require('kill-port');
-
 const app = express();
 
 const PORT = process.env.PORT || 3001;
@@ -22,17 +20,15 @@ db.Item
   .remove({})
   .then(() => db.Item.collection.insertMany(itemSeed))
   .then(data => {
-    console.log("Data Seeded" + data.result.n + " Records");
+    console.log("Data Seeded " + data.result.n + " Records");
   })
   .catch(err => {
     console.error(err);
     process.exit(1);
   });
 
-const userRoutes = require("./routes/user.js")
-const itemRoutes = require("./routes/products.js")
-app.use(userRoutes);
-app.use(itemRoutes);
+const Routes = require("./routes/index.js")
+app.use(Routes);
 
 // Start the API server
 app.listen(PORT, function() {

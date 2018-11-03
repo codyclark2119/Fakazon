@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models");
+const db = require("../../models/index.js");
 
-router.get("/", function(req,res){
+router.get("/api/products", function(req,res){
     db.Item.find({}, function (error, response) {
         if (error) {
             console.log(error);
@@ -24,4 +24,4 @@ router.get("/api/products/:id", function(req,res){
     })
 });
 
-module.exports = itemRoutes;
+module.exports = router;
