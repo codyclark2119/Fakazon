@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import API from "../../API/auth.js";
+import API from "../../API/index.js";
 
 export default class Signup extends Component {
     state = {
         email:"",
         password:""
     }
+    
     handleSignUp = (event) => {
         event.preventDefault();
         console.log("I'm signing up baby", this.state);
