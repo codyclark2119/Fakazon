@@ -23,7 +23,8 @@ const API = {
         return axios.put("/api/users/update", data);
     },
     getItems:function(){
-        return axios.get("/api/products")
+        console.log("Getting product List");
+        return axios.get("/api/products");
     }
 }
 

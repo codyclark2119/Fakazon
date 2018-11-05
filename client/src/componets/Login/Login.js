@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import API from "../../API/auth.js";
+import API from "../../API/index.js";
 
 export default class Login extends Component {
     state = {
