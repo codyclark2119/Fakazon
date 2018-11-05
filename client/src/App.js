@@ -12,16 +12,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <Router>
+        <Router>
           <div>
-      <Navbar />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/signup" component={Signup} />
-      <Route exact path="/profile" component={Profile} />
-      <Route exact path="/products" component={Products} />
+          <Navbar />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/products" component={Products} />
           </div>
-    </Router>
+        </Router>
       </div>
     );
   }

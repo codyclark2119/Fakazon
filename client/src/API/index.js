@@ -1,10 +1,18 @@
 import axios from "axios";
 
 const API = {
+    signup:function(newUser){
+        return axios.post("/api/signup", newUser) 
+    },
+    login:function(login){
+        return axios.post("/api/login", {email:login.email, password:login.password})
+    },
+    logOut:function(){
+        return axios.post("/");
+    },
     getUser:function(id){
         console.log("Getting user");
         return axios.get("/api/user" + id);
-        
     },
     createUsers:function(data){
         console.log("Creating User");
@@ -14,6 +22,10 @@ const API = {
         console.log("Updating User");
         return axios.put("/api/users/update", data);
     },
+    getItems:function(){
+        return axios.get("/api/products")
+    }
 }
 
 export default API
+

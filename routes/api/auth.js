@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../../models");
 
-router.post("/api/login", function(req,res){
+router.post("/login", function(req,res){
     db.User.findOne({email: req.body.email}, function(err, response){
         if (err){
             return res.json(err);
@@ -18,7 +18,7 @@ router.post("/api/login", function(req,res){
     })
 });
 
-router.post("/api/signup", function (req, res) {
+router.post("/signup", function (req, res) {
     db.User.create(req.body, function (error, response) {
         if (error) {
             console.log(error);

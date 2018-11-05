@@ -14,7 +14,7 @@ router.get("/", function(req,res){
     })
 });
 
-router.get("/api/products/:id", function(req,res){
+router.get("/:id", function(req,res){
     db.Item.findOne({ _id: req.params.id }, function (err, response) {
         if (error) {
             console.log(error);
