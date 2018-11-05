@@ -16,21 +16,6 @@ router.post("/api/user", function(req,res){
     })
 });
 
-router.post("/login", function(req,res){
-    db.User.findOne({username: req.body.username}, function(err, response){
-        if (err){
-            return res.json(err);
-        }
-        
-        response.comparePassword(req.body.password, function (error, user) {
-            if(error){
-                res.send(error)
-            }
-            res.json(user);
-        });
-    })
-});
-
 router.put("/api/user/:id", function(req,res){
     res.send("Update Users")
 });
