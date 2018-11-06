@@ -1,19 +1,25 @@
 import React from "react";
+import {
+    Card, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, Row, Col
+} from 'reactstrap';
 
 const ProductList = props => (
-    <div className="container">
+    <Row>
         {props.productList.map(result => (
-            <div className="card" key={result._id}>
-                <div className="card-body">
-                    <h5 className="card-title">{result.product}</h5>
-                    <p className="card-subtitle">Made By {result.seller}</p>
-                    <h4 className="card-text">{result.price}</h4><br/>
-                    <p className="card-text">{result.description}</p>
-                    <button className="btn btn-primary">More Details</button>
-                </div>
-            </div>
+            <Col sm="4">
+                <Card key={result._id}>
+                    <CardBody className="card-body">
+                        <CardTitle>{result.product}</CardTitle>
+                        <CardSubtitle>Made By {result.seller}</CardSubtitle>
+                        <CardText><strong><h4>{result.price}</h4></strong></CardText>
+                        <CardText>{result.description}</CardText>
+                        <Button className="btn btn-primary" value={result._id}>More Details</Button>
+                    </CardBody>
+                </Card>
+            </Col>
         ))}
-    </div>
+    </Row>
 );
 
 export default ProductList;
