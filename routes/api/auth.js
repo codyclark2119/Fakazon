@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../../models");
 
 router.post("/login", function(req,res){
-    db.User.findOne({email: req.body.email}, function(err, response){
+    db.User.findOne({username: req.body.username}, function(err, response){
         if (err){
             return res.json(err);
         }

@@ -5,7 +5,7 @@ const API = {
         return axios.post("/api/signup", newUser) 
     },
     login:function(login){
-        return axios.post("/api/login", {email:login.email, password:login.password})
+        return axios.post("/api/login", {username:login.username, password:login.password})
     },
     logOut:function(){
         return axios.post("/");

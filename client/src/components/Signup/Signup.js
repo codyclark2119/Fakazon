@@ -3,7 +3,7 @@ import API from "../../API/index.js";
 
 export default class Signup extends Component {
     state = {
-        email:"",
+        username:"",
         password:""
     }
     
@@ -25,21 +25,16 @@ export default class Signup extends Component {
             <div className="container-fluid">
                 <form>
                     <div className="form-group">
-                        <label>Email address</label>
+                        <label>Username</label>
                         <input 
-                            name="email" 
-                            type="email" 
+                            name="username" 
+                            type="username" 
                             className="form-control" 
-                            id="exampleInputEmail1" 
-                            aria-describedby="emailHelp" 
-                            placeholder="Enter email" 
+                            id="exampleInputusername1" 
+                            aria-describedby="usernameHelp" 
+                            placeholder="Enter username" 
                             onChange={this.captureInput} 
                         />
-                        <small 
-                            id="emailHelp" 
-                            className="form-text text-muted">
-                            We'll never share your email with anyone else.
-                        </small>
                     </div>
                     <div className="form-group">
                         <label>Password</label>

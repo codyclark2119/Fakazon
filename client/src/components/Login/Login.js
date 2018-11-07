@@ -3,7 +3,7 @@ import API from "../../API/index.js";
 
 export default class Login extends Component {
     state = {
-        email:"",
+        username:"",
         password:""
     }
 
@@ -26,14 +26,12 @@ export default class Login extends Component {
             <div className="container-fluid">
             <form>
                 <div className="form-group">
-                    <label>Email address</label>
+                    <label>Username</label>
                     <input 
-                        name="email" 
-                        type="email" 
+                        name="name" 
+                        type="name" 
                         className="form-control" 
-                        id="exampleInputEmail1" 
-                        aria-describedby="emailHelp" 
-                        placeholder="Enter email" 
+                        placeholder="Enter username" 
                         onChange={this.captureInput} 
                     />
                 </div>
