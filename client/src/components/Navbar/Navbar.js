@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Navbar.css";
 import {
   Collapse,
   Navbar,
@@ -26,8 +27,8 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Fake Amazon</NavbarBrand>
+        <Navbar color="dark" dark expand="md">
+          <NavbarBrand href="/">Fakeazon Web Store: The Future of Online Ecommerce</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
