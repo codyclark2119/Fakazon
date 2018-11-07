@@ -1,60 +1,57 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap';
 
-// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-class Nav extends Component {
+export default class Example extends React.Component {
   constructor(props) {
-  super(props);
-    this.toggleNavbar = this.toggleNavbar.bind(this);
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
     this.state = {
-    collapsed: true,
+      isOpen: false
     };
   }
- 
- toggleNavbar() {
+  toggle() {
     this.setState({
-    collapsed: !this.state.collapsed,
+      isOpen: !this.state.isOpen
     });
   }
+  render() {
+    return (
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Fake Amazon</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
 
- render() {
-    const collapsed = this.state.collapsed;
-    const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
-    const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
-      return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark transparent-nav">
-          <div className="container">
-                  <a className="navbar-brand" href="/">Fakeazon</a>
-                    <button onClick={this.toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                      <span className="navbar-toggler-icon" />
-                    </button>
-          
-                <div className={`${classOne}`} id="navbarResponsive">
-                  <ul className="navbar-nav ml-auto">
+              <NavItem>
+                <NavLink href="/">Home</NavLink>
+              </NavItem>
 
-                    <li className="nav-item active">
-                      <Link className="nav-link" to="/">Home</Link>
-                    </li>
+              <NavItem>
+                <NavLink href="/signup">Sign Up</NavLink>
+              </NavItem>
 
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/login">Login</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/signup">Sign Up</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/profile">My Profile</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/products">Products</Link>
-                    </li>
-                    
-                  </ul>
-                </div>
-          </div>
-        </nav>
-      );
-    }
- }
- 
-export default Nav;
+              <NavItem>
+                <NavLink href="/login">Login</NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink href="/products">Products</NavLink>
+              </NavItem>
+
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
+}
