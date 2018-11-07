@@ -7,6 +7,7 @@ import Home from "./components/Home/Home.js";
 import Signup from "./components/Signup/Signup.js";
 import Profile from "./components/Profile/Profile.js";
 import Products from "./components/Products/Products.js";
+import Jumbo from "./components/Jumbotron/Jumbotron.js"
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <Router>
           <div>
             <Navbar />
+            <Jumbo />
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
