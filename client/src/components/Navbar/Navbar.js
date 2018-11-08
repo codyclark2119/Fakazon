@@ -38,11 +38,15 @@ export default class Example extends React.Component {
               </NavItem>
 
               <NavItem>
-                <NavLink href="/signup">Sign Up</NavLink>
+                {
+                  this.props.isLoggedIn ? <NavLink href="/logout" onClick={this.props.handleLogout}>Log Out</NavLink> : <NavLink href="/signup"> Sign Up</NavLink>
+                }
               </NavItem>
 
               <NavItem>
-                <NavLink href="/login">Login</NavLink>
+              {
+                  this.props.isLoggedIn ? "" : <NavLink href="/login"> Log In</NavLink>
+                }
               </NavItem>
 
               <NavItem>

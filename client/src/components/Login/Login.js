@@ -1,26 +1,19 @@
 import React, {Component} from "react";
-import API from "../../API/index.js";
 
 export default class Login extends Component {
     state = {
         username:"",
         password:""
     }
-
-    handleLogin = (event) => {
-        event.preventDefault();
-        console.log("I'm logging in baby", this.state);
-        API.login(this.state).then(function(response){
-            console.log(response);
-        })
-    }
-
     captureInput = (event) => {
         this.setState({
             [event.target.name]:event.target.value
         })
     }
-
+    passToAppLogin = (event) => {
+        event.preventDefault();
+        this.props.handleLogin(this.state)
+    }
     render(){
         return(
             <div className="container-fluid">
@@ -49,7 +42,7 @@ export default class Login extends Component {
                     <button 
                         type="submit" 
                         className="btn btn-primary" 
-                        onClick={this.handleLogin}>Submit
+                        onClick={this.passToAppLogin}>Submit
                     </button>
             </form>
         </div>

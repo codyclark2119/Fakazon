@@ -1,6 +1,9 @@
 import axios from "axios";
 
 const API = {
+    isLoggedIn:function(){
+        return axios.get("/api/isAuth")
+    },
     signup:function(newUser){
         return axios.post("/api/signup", newUser) 
     },
@@ -12,11 +15,7 @@ const API = {
     },
     getUser:function(id){
         console.log("Getting user");
-        return axios.get("/api/user" + id);
-    },
-    createUsers:function(data){
-        console.log("Creating User");
-        return axios.get("/api/users", data);
+        return axios.get("/api/profile/" + id);
     },
     updateUser:function(data){
         console.log("Updating User");
@@ -26,6 +25,7 @@ const API = {
         console.log("Getting product List");
         return axios.get("/api/products");
     }
+
 }
 
 export default API
