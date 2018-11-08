@@ -28,8 +28,8 @@ export default class Login extends Component {
                 <div className="form-group">
                     <label>Username</label>
                     <input 
-                        name="name" 
-                        type="name" 
+                        name="username" 
+                        type="username" 
                         className="form-control" 
                         placeholder="Enter username" 
                         onChange={this.captureInput} 
