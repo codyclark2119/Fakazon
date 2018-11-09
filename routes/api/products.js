@@ -16,7 +16,7 @@ router.get("/", function(req,res){
 
 router.get("/:id", function(req,res){
     db.Item.findOne({ _id: req.params.id }, function (err, response) {
-        if (error) {
+        if (err) {
             console.log(error);
             res.send(error);
         }

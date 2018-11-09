@@ -25,6 +25,10 @@ const API = {
     getItems:function(){
         console.log("Getting product List");
         return axios.get("/api/products");
+    },
+    details:function(id){
+        console.log("Getting Item Details");
+        return axios.get("/api/products/" + id);
     }
 }
 
