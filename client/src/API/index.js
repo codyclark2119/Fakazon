@@ -28,7 +28,7 @@ const API = {
     },
     addToCart:function(data){
         console.log("Adding Item to cart");
-        return axios.post("/api/cart", data);
+        return axios.post("/api/cart", {product:data.product, price:data.price});
     },
     getCart:function(id){
         console.log("Getting Cart");

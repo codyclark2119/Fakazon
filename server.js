@@ -27,6 +27,13 @@ db.Item
     process.exit(1);
   });
 
+db.Cart
+  .remove({})
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
 const Routes = require("./routes/index.js")
 app.use(Routes);
 

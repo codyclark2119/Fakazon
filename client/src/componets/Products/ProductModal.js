@@ -1,17 +1,15 @@
 import React from 'react';
 import API from "../../API/index.js";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class ProductModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       modal: false,
-      item: {
-        product: "",
-        price: "" 
-      }
-
+      product: "",
+      price: "",
+      amount: ""
     };
 
     this.toggle = this.toggle.bind(this);
@@ -20,17 +18,22 @@ class ProductModal extends React.Component {
   toggle() {
     this.setState({
       modal: !this.state.modal,
-      product: this.props.result.product,
-      price: this.props.result.price
     });
-    console.log(this.state);
   }
 
-  addToCart() {
-    API.addToCart(this.state.item)
-        .then(function(response){
-            console.log(response);
-        })
+  captureInput = (event) => {
+    this.setState({
+        [event.target.name]:event.target.value
+    });
+  }
+
+  addToCart = () => {
+    API.addToCart({ product: this.props.result.product,
+      price: this.props.result.price,
+      amount: this.state.amount })
+      .then(function (response) {
+        console.log(response);
+      })
   }
 
   render() {
@@ -44,6 +47,16 @@ class ProductModal extends React.Component {
             <p>{this.props.result.description}</p>
           </ModalBody>
           <ModalFooter>
+            <div>
+              <Input type="select" name="amount" id="exampleSelect" onChange={this.captureInput}>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </Input>
+            </div>
             <Button color="primary" onClick={this.addToCart}>Add To Cart!</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
