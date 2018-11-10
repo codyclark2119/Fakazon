@@ -14,14 +14,18 @@ router.get("/", function(req,res){
     })
 });
 
-router.put("/:id", function(req,res){
-    db.Cart.create(req.body, function (err, response) {
-        if (err) {
-            console.log(error);
-            res.send(error);
+router.post("/", function(req,res){
+    db.Cart.create(req.body, function(err, response){
+        if (err){
+            return res.json(err);
         }
-        res.json(response)
+
+        return res.json(response);
     })
+});
+
+router.delete("/:id", function(req,res){
+    res.send("Delete Users")
 });
 
 module.exports = router;

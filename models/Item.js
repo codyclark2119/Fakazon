@@ -7,7 +7,6 @@ const itemSchema = new Schema({
     price: { type: String, required: true },
     description: { type: String, required: true },
     categories: { type: Array, required: true },
-    isInCart: { type: Boolean, required: true },
     stock: { type: String, required: true }
 })
 

@@ -16,11 +16,11 @@ const API = {
     },
     createUsers:function(data){
         console.log("Creating User");
-        return axios.get("/api/users", data);
+        return axios.get("/api/user", data);
     },
     updateUser:function(data){
         console.log("Updating User");
-        return axios.put("/api/users/update", data);
+        return axios.put("/api/user/update", data);
     },
     getItems:function(){
         console.log("Getting product List");
@@ -28,11 +28,11 @@ const API = {
     },
     addToCart:function(data){
         console.log("Adding Item to cart");
-        return axios.put("/api/cart", data);
+        return axios.post("/api/cart", data);
     },
-    getCart:function(){
+    getCart:function(id){
         console.log("Getting Cart");
-        return axios.get("/api/cart");
+        return axios.get("/api/cart" + id );
     }
 }
 

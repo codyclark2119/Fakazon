@@ -7,7 +7,6 @@ import Home from "./componets/Home/Home.js";
 import Signup from "./componets/Signup/Signup.js";
 import Profile from "./componets/Profile/Profile.js";
 import Products from "./componets/Products/Products.js";
-import Cart from "./componets/Cart/Cart.js";
 
 class App extends Component {
   render() {
@@ -21,7 +20,6 @@ class App extends Component {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/products" component={Products} />
-            <Route exact path="/cart" component={Cart} />
           </div>
         </Router>
       </div>

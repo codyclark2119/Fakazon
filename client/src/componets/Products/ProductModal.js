@@ -7,9 +7,11 @@ class ProductModal extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      itemId: "",
-      price: "",
-      name: ""
+      item: {
+        product: "",
+        price: "" 
+      }
+
     };
 
     this.toggle = this.toggle.bind(this);
@@ -18,17 +20,17 @@ class ProductModal extends React.Component {
   toggle() {
     this.setState({
       modal: !this.state.modal,
-      itemId: !this.props.result._id,
-      price: !this.props.result.price,
-      name: !this.props.result.product
+      product: this.props.result.product,
+      price: this.props.result.price
     });
+    console.log(this.state);
   }
 
-  addToCart = event => {
-    event.preventDefault();
-    API.addToCart({ id: this.state.itemId, price: this.state.price, name: this.state.name}).then(function (response) {
-      console.log(response);
-    })
+  addToCart() {
+    API.addToCart(this.state.item)
+        .then(function(response){
+            console.log(response);
+        })
   }
 
   render() {
