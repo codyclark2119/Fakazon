@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
-import Login from "./componets/Login.js";
-import Header from "./componets/searchBar.js";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./componets/Login/Login.js";
 import './App.css';
-import searchBar from './componets/searchBar.js';
-import pageHeader from './componets/pageHeader.js'
+import Navbar from "./componets/Navbar/Navbar.js";
+import Home from "./componets/Home/Home.js";
+import Signup from "./componets/Signup/Signup.js";
+import Profile from "./componets/Profile/Profile.js";
+import Products from "./componets/Products/Products.js";
+import Cart from "./componets/Cart/Cart.js";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <pageHeader>
-      <searchBar>
-
+        <Router>
+          <div>
+            <Navbar />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/products" component={Products} />
+            <Route exact path="/cart" component={Cart} />
+          </div>
+        </Router>
       </div>
     );
   }
