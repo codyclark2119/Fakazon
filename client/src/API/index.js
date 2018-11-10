@@ -26,9 +26,13 @@ const API = {
         console.log("Getting product List");
         return axios.get("/api/products");
     },
-    details:function(id){
-        console.log("Getting Item Details");
-        return axios.get("/api/products/" + id);
+    addToCart:function(data){
+        console.log("Adding Item to cart");
+        return axios.put("/api/cart", data);
+    },
+    getCart:function(){
+        console.log("Getting Cart");
+        return axios.get("/api/cart");
     }
 }
 
