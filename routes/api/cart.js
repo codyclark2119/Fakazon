@@ -25,7 +25,13 @@ router.post("/", function(req,res){
 });
 
 router.delete("/:id", function(req,res){
-    res.send("Delete Users")
+    db.Cart.deleteOne({ _id: req.params.id }, function (err, response) {
+        if (err) {
+            console.log(error);
+            res.send(error);
+        }
+        res.json(response)
+    })
 });
 
 module.exports = router;

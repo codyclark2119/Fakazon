@@ -33,7 +33,8 @@ class ProductModal extends React.Component {
       amount: this.state.amount })
       .then(function (response) {
         console.log(response);
-      })
+      });
+      this.toggle();
   }
 
   render() {
@@ -48,7 +49,7 @@ class ProductModal extends React.Component {
           </ModalBody>
           <ModalFooter>
             <div>
-              <Input type="select" name="amount" id="exampleSelect" onChange={this.captureInput}>
+              <Input type="select" name="amount" id="amountSelect" onChange={this.captureInput}>
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>

@@ -28,11 +28,15 @@ const API = {
     },
     addToCart:function(data){
         console.log("Adding Item to cart");
-        return axios.post("/api/cart", {product:data.product, price:data.price});
+        return axios.post("/api/cart", {product:data.product, price:data.price, amount:data.amount});
     },
-    getCart:function(id){
+    getCart:function(){
         console.log("Getting Cart");
-        return axios.get("/api/cart" + id );
+        return axios.get("/api/cart");
+    },
+    deleteItem:function(id){
+        console.log("Deleting Item from cart");
+        return axios.delete("/api/cart" + id)
     }
 }
 
