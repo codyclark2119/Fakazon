@@ -15,7 +15,11 @@ const API = {
     },
     getUser:function(id){
         console.log("Getting user");
-        return axios.get("/api/user" + id);
+        return axios.get("/api/user/" + id);
+    },
+    getUserSession:function(id){
+        console.log("Getting user session");
+        return axios.get("/api/user/");
     },
     createUsers:function(data){
         console.log("Creating User");
