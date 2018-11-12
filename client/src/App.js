@@ -7,50 +7,36 @@ import Home from "./components/Home/Home.js";
 import Signup from "./components/Signup/Signup.js";
 import Profile from "./components/Profile/Profile.js";
 import Products from "./components/Products/Products.js";
-import API from "./API";
+import API from "./API/";
+import CartBar from "./components/CartBar/CartBar.js";
 
 class App extends Component {
   state = {
-    isLoggedIn:false
-  }
-
-  componentDidMount(){
-    API.isLoggedIn().then((response)=>{
-
-      console.log("isLoggedIn", response.isLoggedIn)
-    })
+    isLoggedIn: false,
+    user: ""
   }
   handleLogin = (user) => {
     console.log("I'm logging in baby", user);
-    API.login(user).then((response)=>{
-        console.log(response);
-        if(response.data){
-          this.setState({
-            isLoggedIn:true
-          })
-          console.log(this.state)
-        }
-    })
-}
-  handleLogout = () =>{
-    API.logOut().then((response) =>{
-      this.setState({
-        isLoggedIn:false
-      })
+    API.login(user).then((response) => {
+      console.log(response);
+        this.setState({
+          isLoggedIn: true,
+          user: response.data.user._id
+        })
     })
   }
-
   render() {
     return (
       <div className="App">
-         <Router isLoggedIn={this.state.isLoggedIn}> 
+        <Router>
           <div>
-            <Navbar updateUser={this.updateUser} isLoggedIn={this.state.isLoggedIn} handleLogout={this.handleLogout}/>
+            <CartBar />
+            <Navbar isLoggedIn={this.state.isLoggedIn}/>
             <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={()=><Login handleLogin={this.handleLogin}/>} />
+            <Route exact path="/login" component={() => (<Login handleLogin={this.handleLogin} />)} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/products" component={()=><Products isLoggedIn={this.state.isLoggedIn}/>} />
+            <Route exact path="/products" component={Products} />
           </div>
         </Router>
       </div>

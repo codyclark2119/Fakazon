@@ -1,4 +1,5 @@
 import React from 'react';
+import API from "../../API/index";
 import "./Navbar.css";
 import {
   Collapse,
@@ -11,13 +12,18 @@ import {
 } from 'reactstrap';
 
 export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
+  state = {
+    isOpen: false,
+    isLoggedIn:false
+  }
+  componentDidMount() {
+    API.isLoggedIn().then((response)=>{
+      if(response.data.success){
+          this.setState({
+            isLoggedIn:true
+          })
+      }
+    })
   }
   toggle() {
     this.setState({
@@ -27,28 +33,28 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/">Fakeazon Web Store: The Future of Online Ecommerce</NavbarBrand>
+        <Navbar className="navgreen" color="light" light expand="md">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="mx-auto" navbar>
 
               <NavItem>
                 <NavLink href="/">Home</NavLink>
               </NavItem>
-
               <NavItem>
-                {
-                  this.props.isLoggedIn ? <NavLink href="/logout" onClick={this.props.handleLogout}>Log Out</NavLink> : <NavLink href="/signup"> Sign Up</NavLink>
-                }
+              { this.state.isLoggedIn ? 
+                ""
+                :
+                <NavLink href="/signup">Sign Up</NavLink>
+              }
               </NavItem>
-
               <NavItem>
-              {
-                  this.props.isLoggedIn ? "" : <NavLink href="/login"> Log In</NavLink>
-                }
+              { this.state.isLoggedIn ? 
+                <NavLink href="/logout">Logout</NavLink>
+                :
+                <NavLink href="/login">Login</NavLink>
+              }
               </NavItem>
-
               <NavItem>
                 <NavLink href="/products">Products</NavLink>
               </NavItem>

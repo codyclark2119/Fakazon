@@ -1,12 +1,10 @@
 import React from "react";
-
 import {
     Card, CardText, CardBody,
     CardTitle, CardSubtitle, Button, Row, Col
 } from 'reactstrap';
 
 const ProductList = props => (
-
     <Row>
         {props.productList.map(result => (
             <Col sm="4">

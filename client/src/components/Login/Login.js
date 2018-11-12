@@ -1,19 +1,22 @@
 import React, {Component} from "react";
-
 export default class Login extends Component {
     state = {
         username:"",
         password:""
     }
+
+    handleLogin = (event) => {
+        event.preventDefault();
+        console.log("I'm logging in baby", this.state);
+        this.props.handleLogin(this.state)
+    }
+
     captureInput = (event) => {
         this.setState({
             [event.target.name]:event.target.value
         })
     }
-    passToAppLogin = (event) => {
-        event.preventDefault();
-        this.props.handleLogin(this.state)
-    }
+
     render(){
         return(
             <div className="container-fluid">
@@ -22,7 +25,7 @@ export default class Login extends Component {
                     <label>Username</label>
                     <input 
                         name="username" 
-                        type="username" 
+                        type="name" 
                         className="form-control" 
                         placeholder="Enter username" 
                         onChange={this.captureInput} 
@@ -42,7 +45,7 @@ export default class Login extends Component {
                     <button 
                         type="submit" 
                         className="btn btn-primary" 
-                        onClick={this.passToAppLogin}>Submit
+                        onClick={this.handleLogin}>Submit
                     </button>
             </form>
         </div>

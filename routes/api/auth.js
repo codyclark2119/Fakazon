@@ -1,21 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../../models");
+const passport = require("passport"); 
 
-router.post("/login", function(req,res){
-    db.User.findOne({username: req.body.username}, function(err, response){
-        if (err){
-            return res.json(err);
-        }
-        
-        response.comparePassword(req.body.password, function (error, user) {
-            if(error){
-                res.send(error)
-            }
-            res.json(user);
-            console.log("hey");
-        });
-    })
+router.post("/login", passport.authenticate("local"), function(req,res){
+    res.json({success:true, user:req.user})
 });
 
 router.post("/signup", function (req, res) {
@@ -32,4 +21,9 @@ router.post("/signup", function (req, res) {
     });
 });
 
+router.get("/auth", function(req, res){
+    db.UserSession.findOne({isDeleted:false}).populate("userId").then(function(response){
+        res.json({success:true, user:response.userId._id});
+    })
+})
 module.exports = router;
