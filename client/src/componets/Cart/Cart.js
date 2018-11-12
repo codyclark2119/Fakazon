@@ -17,6 +17,14 @@ class Cart extends React.Component {
         this.toggle = this.toggle.bind(this);
     }
 
+    clearCart = () => {
+        API.clearCart()
+            .then(
+                window.location.reload()
+            )
+            .catch(err => console.log(err));
+    } 
+
     toggle() {
         this.setState({
             modal: !this.state.modal
@@ -45,7 +53,7 @@ class Cart extends React.Component {
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={this.toggle}>Finish Purchase</Button>{' '}
-                        <Button color="secondary" onClick={this.toggle}>Clear Cart</Button>
+                        <Button color="secondary" onClick={this.clearCart}>Clear Cart</Button>
                     </ModalFooter>
                 </Modal>
             </div>

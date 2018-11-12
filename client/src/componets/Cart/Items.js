@@ -14,17 +14,18 @@ class Items extends React.Component {
       }
 
     componentDidMount() {
+        console.log(this.state.itemId);
         this.setState({
-            itemId: !this.props.result._id
-        });
-    }
+            itemId: this.props.result._id
+        });  
+    }   
     
     deleteItem = () => {
         API.deleteItem(this.state.itemId)
             .then(
-                console.log("Deleted")
+                window.location.reload()
             )
-            .catch(err => console.log(err));
+            .catch(err => console.log(err));       
     }
 
     render() {

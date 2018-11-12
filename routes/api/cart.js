@@ -34,4 +34,14 @@ router.delete("/:id", function(req,res){
     })
 });
 
+router.delete("/", function(req, res) {
+    db.Cart.remove({}, function(err, response) {
+        if(err) {
+            console.log(err);
+            res.send(err);
+        }
+        res.json(response)
+    })
+});
+
 module.exports = router;

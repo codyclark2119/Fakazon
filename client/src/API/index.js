@@ -36,7 +36,11 @@ const API = {
     },
     deleteItem:function(id){
         console.log("Deleting Item from cart");
-        return axios.delete("/api/cart" + id)
+        return axios.delete("/api/cart/" + id)
+    }, 
+    clearCart:function(id){
+        console.log("Clearing Cart");
+        return axios.delete("api/cart/")
     }
 }
 
