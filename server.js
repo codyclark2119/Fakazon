@@ -9,7 +9,7 @@ const morgan = require("morgan");
 const app = express();
 const MongoStore = require("connect-mongo")(session);
 const PORT = process.env.PORT || 3001;
-app.use(morgan("dev"));
+
 
 mongoose.promise = Promise;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fakazondb");
@@ -23,9 +23,9 @@ app.use(express.static("client/public"));
 app.use(cookieParser());
 app.use(session({ 
   secret: 'keyboard cat',
-store: new MongoStore({ mongooseConnection: mongoose.connection}),
-resave: false,
-saveUninitialized: false
+    store: new MongoStore({ mongooseConnection: mongoose.connection}),
+    resave: false,
+    saveUninitialized: false
  }));
 
 app.use(passport.initialize());
@@ -43,6 +43,7 @@ db.Item
     process.exit(1);
   });
 
+app.use(morgan("dev"));
 const Routes = require("./routes/index.js")
 // require("./passport-local")
 app.use(Routes);

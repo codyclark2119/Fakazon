@@ -1,25 +1,25 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../../models");
+const User = require("../../models/User");
 const passport = require("../../passport-local"); 
 
 router.post("/login", passport.authenticate("local"), function(req,res){
-    res.json({success:true, user:req.user})
+    console.log("Logged in user " + req.user);
+    res.json({success:true, user:req.user.username})
 });
 
-// router.post("/signup", function (req, res) {
-//     db.User.create(req.body, function (error, response) {
-//         if (error) {
-//             console.log(error);
-//             res.send(error)
-//         }
-//         else {
-//             res.json(response);
-//             console.log("hi");
-//             console.log(req.body);
-//         }
-//     });
-// });
+router.post('/logout', (req, res) => {
+    if (req.user) {
+        console.log("logging out " + req.user);
+        req.logout()
+        res.send({ msg: 'logging out' })
+    } else {
+        console.log("No user currently logged in.")
+        res.send({ msg: 'no user to log out' })
+    }
+});
+
 router.post('/signup', (req, res) => {
     console.log('user signup');
 

@@ -24,7 +24,7 @@ export default class CartBar extends React.Component {
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
               <NavItem>
-                <NavLink a href="/"><i className="fas fa-shopping-cart"></i> Cart</NavLink>
+                <NavLink href="/"><i className="fas fa-shopping-cart"></i> Cart</NavLink>
               </NavItem>
               
             </Nav>

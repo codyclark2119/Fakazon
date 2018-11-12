@@ -10,8 +10,8 @@ const API = {
     login:function(login){
         return axios.post("/api/login", {username:login.username, password:login.password})
     },
-    logOut:function(){
-        return axios.post("/");
+    logout:function(){
+        return axios.post("/api/logout");
     },
     getUser:function(id){
         console.log("Getting user");

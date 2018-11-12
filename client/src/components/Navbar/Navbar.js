@@ -7,6 +7,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import API from '../../API';
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -17,6 +18,17 @@ export default class Example extends React.Component {
       isOpen: false
     };
   }
+  logout = () => {
+    console.log("I'm logging out, darlin");
+    API.logout().then((response) => {
+      console.log(response);
+        // this.setState({
+        //   isLoggedIn: false,
+        //   user: ""
+        // })
+    })
+  }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -38,6 +50,9 @@ export default class Example extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink href="/login">Login</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/logout" onClick={this.logout}>Logout</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/products">Products</NavLink>
