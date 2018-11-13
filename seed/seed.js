@@ -63,7 +63,7 @@ const itemSeed = [
         stock: "0"
     },
     {
-        product: "Samsung UN55NU8000FXZA FLAT 55” 4K UHD 8 Series Smart TV 2018",
+        product: "Samsung FLAT 55” 4K UHD 8 Series Smart TV 2018",
         seller: "Samsung",
         price: "847.99",
         description: "Loaded with features, the NU8000 has advanced smart browsing with voice control, which finds your shows easily. Stunning depth of HDR plus more colors than HDTVs create a breathtaking 4K picture.",
@@ -81,7 +81,7 @@ const itemSeed = [
         stock: "0"
     },
     {
-        product: "Crayola Silly Scents Sticker Maker, Gift for Kids, Ages 6, 7, 8, 9",
+        product: "Crayola Silly Scents Sticker Maker",
         seller: "Crayola",
         price: "19.95",
         description: "The Silly Scents Sticker Set Includes: Sticker Maker, 10 Line Art Sheets, 20 Adhesive Sheets, 6 Silly Scents Mini Markers, 3 Scent Sticks, and Instructions",
@@ -99,16 +99,16 @@ const itemSeed = [
         stock: "0"
     },
     {
-        product: "NIX X08G Advance 8 inch Widescreen Hi-Res Digital Photo & HD Video Frame with Hu-Motion Sensor, Black",
+        product: "NIX X08G Advance 8 inch Widescreen Sensor, Black",
         seller: "NIX",
         price: "79.99",
-        description: "Designed to keep all your precious memories in one place.NIX Advance frames allow you to play HD videos and photos in the same Slideshow. 720p HD Video Formats: MP4 (H.264 HD 720p AAC).Fast processor: View thousands of photos and videos from your inserted USB stick or SD/SDHC card.",
+        description: "Designed to keep all your precious memories in one place. NIX Advance frames allow you to play HD videos and photos in the same Slideshow. 720p HD Video Formats: MP4 (H.264 HD 720p AAC).Fast processor: View thousands of photos and videos from your inserted USB stick or SD/SDHC card.",
         photoLink: "./assets/12",
         categories: ["Photo", "Electronics"],
         stock: "0"
     },
     {
-        product: "Epson Perfection V600 Color Photo, Image, Film, Negative & Document Scanner - Corded",
+        product: "Epson Perfection V600 Scanner",
         seller: "Epson",
         price: "189.98",
         description: "Epson Perfection V600 Color Photo, Image, Film, Negative & Document Scanner - Corded. Create extraordinary enlargements from film — 6400 x 9600 dpi for enlargements up to 17 x 22. Scan slides, negatives and medium-format panoramic film — built-in Transparency Unit. ",
@@ -153,16 +153,7 @@ const itemSeed = [
         stock: "0"
     },
     {
-        product: "Anki Cozmo, A Fun, Educational Toy Robot for Kids",
-        seller: "Anki",
-        price: "179.00",
-        description: "Cozmo’s a supercomputer and loyal sidekick all at once. Thanks to artificial intelligence, Cozmo can express hundreds of emotions. From curious to clever, persistent to playful, he has personality x 10. He knows your name, face, and quirks. And best of all, he continues to evolve the more you hang out.",
-        photoLink: "./assets/18",
-        categories: ["Toys", "Electronics"],
-        stock: "0"
-    },
-    {
-        product: "WolVol Transport Car Carrier Truck Toy for Boys and Girls (includes 6 cars and 28 slots)",
+        product: "WolVol Transport Car Carrier Truck",
         seller: "WolVol",
         price: "28.94",
         description: "20'' Long Truck, includes 6 semi metal cars and has space to carry up to 28 cars",
@@ -171,7 +162,7 @@ const itemSeed = [
         stock: "0"
     },
     {
-        product: "ASUS VivoBook S Thin & Light Laptop, 14 inch FHD, Intel Core i7-8550U, 8GB RAM, 256GB SSD, GeForce MX150, NanoEdge Display, Backlit Kbd, FP Sensor - S410UN-NS74",
+        product: "ASUS VivoBook S Thin & Light Laptop",
         seller: "ASUS",
         price: "799.00",
         description: "ASUS VivoBook S Thin & Light Laptop, 14 inch FHD, Intel Core i7-8550U, 8GB RAM, 256GB SSD, GeForce MX150, NanoEdge Display, Backlit Kbd, FP Sensor - S410UN-NS74",

@@ -28,7 +28,7 @@ export default class Products extends Component {
                 <CardDeck>
                     <Row>
                         {this.state.productList.map(result => (
-                            <Col sm="3" key={result.product}>
+                            <Col sm="3" key={result._id}>
                                 <Card>
                                     <CardBody className="card-body">
                                         <CardTitle>{result.product}</CardTitle>
