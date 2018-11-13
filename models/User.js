@@ -5,13 +5,8 @@ const SALT_WORK_FACTOR = 10;
 mongoose.promise = global.Promise;
 
 const userSchema = new Schema({
-<<<<<<< HEAD
-  email: { type: String, required: true, index:{unique:true} },
-  password: { type: String, required:true },
-=======
   username: { type: String, required: true, index:{unique:true} },
   password: { type: String, required:true }
->>>>>>> d469760049d398cbaa08fce0b6a51f0df9566574
 });
 
 userSchema.pre('save', function(next) {

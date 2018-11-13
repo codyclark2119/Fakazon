@@ -23,32 +23,32 @@ class Cart extends React.Component {
                 window.location.reload()
             )
             .catch(err => console.log(err));
-    } 
+    }
 
     toggle() {
         this.setState({
             modal: !this.state.modal
         });
-        if(this.state.modal === false) {
+        if (this.state.modal === false) {
             API.getCart()
-            .then(res =>
-                this.setState({
-                    cart: res.data
-                })
-            )
-            .catch(err => console.log(err));
+                .then(res =>
+                    this.setState({
+                        cart: res.data
+                    })
+                )
+                .catch(err => console.log(err));
         }
     }
 
     render() {
         return (
             <div>
-                <Button color="secondary" onClick={this.toggle}>Cart</Button>
+                <Button color="secondary" onClick={this.toggle}><i className="fas fa-shopping-cart"></i> Cart</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Your Cart</ModalHeader>
                     <ModalBody>
                         {this.state.cart.map(result => (
-                            <Items result={result}/>
+                            <Items result={result} />
                         ))}
                     </ModalBody>
                     <ModalFooter>

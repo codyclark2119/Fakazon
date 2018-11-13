@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./components/Login/Login.js";
 import './App.css';
-import Navbar from "./componets/Navbar/Navbar.js";
-import Home from "./componets/Home/Home.js";
-import Signup from "./componets/Signup/Signup.js";
-import Profile from "./componets/Profile/Profile.js";
-import Products from "./componets/Products/Products.js";
-import Cart from "./componets/Cart/Cart.js";
+import Navbar from "./components/Navbar/Navbar.js";
+import Home from "./components/Home/Home.js";
+import Signup from "./components/Signup/Signup.js";
+import Profile from "./components/Profile/Profile.js";
+import Products from "./components/Products/Products.js";
+import Cart from "./components/Cart/Cart.js";
 import API from "./API/";
 import CartBar from "./components/CartBar/CartBar.js";
 
