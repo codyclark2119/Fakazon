@@ -47,7 +47,11 @@ const API = {
     }, 
     clearCart:function(id){
         console.log("Clearing Cart");
-        return axios.delete("api/cart/")
+        return axios.delete("/api/cart/")
+    },
+    userSearch:function(query){
+        console.log("Searching for " + query);
+        return axios.get("/api/products/" + query)
     }
 }
 

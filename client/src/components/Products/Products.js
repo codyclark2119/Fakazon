@@ -3,13 +3,14 @@ import API from "../../API/index.js";
 import ProductModal from "./ProductModal";
 import {
     Card, CardText, CardBody, CardDeck,
-    CardTitle, Row, Col,
+    CardTitle, Row, Col, Button
 } from 'reactstrap';
 
 export default class Products extends Component {
 
     state = {
-        productList: []
+        productList: [],
+        userQuery: ""
     };
 
     componentDidMount() {
@@ -22,24 +23,60 @@ export default class Products extends Component {
             .catch(err => console.log(err));
     }
 
+    captureInput = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    userSearch = (event) => {
+        event.preventDefault();
+        this.setState({
+            productList: ""
+        });
+        API.userSearch(this.state.userQuery)
+            .then(res =>
+                this.setState({
+                    productList: res.data
+                })
+            )
+            .catch(err => console.log(err));
+    }
+
     render() {
         return (
             <div className="container">
-                <CardDeck>
+
+                <Row>
+                    <Col xs="8">
+                        <input
+                            name="userQuery"
+                            type="name"
+                            className="form-control"
+                            placeholder="What are you looking for?"
+                            onChange={this.captureInput} ></input>
+                    </Col>
+                    <Col xs="4">
+                        <Button onClick={this.userSearch}>Search!</Button>
+                    </Col>
                     <Row>
-                        {this.state.productList.map(result => (
-                            <Col sm="3" key={result._id}>
-                                <Card>
-                                    <CardBody className="card-body">
-                                        <CardTitle>{result.product}</CardTitle>
-                                        <CardText><strong>{result.price}</strong></CardText>
-                                        <ProductModal result={result} />
-                                    </CardBody>
-                                </Card>
-                            </Col>
-                        ))}
+                        <CardDeck>
+                            {this.state.productList.map(result => (
+                                <Col sm="3" key={result._id}>
+                                    <Card>
+                                        <CardBody className="card-body">
+                                            <CardTitle>{result.product}</CardTitle>
+                                            <CardText><strong>{result.price}</strong></CardText>
+                                            <ProductModal result={result} />
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                            ))}
+                        </CardDeck >
                     </Row>
-                </CardDeck >
+
+
+                </Row>
             </div>
         )
     }

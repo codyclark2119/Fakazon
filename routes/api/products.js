@@ -17,8 +17,18 @@ router.get("/", function(req,res){
 router.get("/:id", function(req,res){
     db.Item.findOne({ _id: req.params.id }, function (err, response) {
         if (err) {
-            console.log(error);
-            res.send(error);
+            console.log(err);
+            res.send(err);
+        }
+        res.json(response)
+    })
+});
+
+router.get("/:query", function(req,res){
+    db.Item.find({ name: req.params.query }, function (err, response) {
+        if (err) {
+            console.log(err);
+            res.send(err);
         }
         res.json(response)
     })

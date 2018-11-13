@@ -2,11 +2,12 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3030",
   "dependencies": {
     "axios": "^0.18.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "proxy": "^0.2.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-router-dom": "^4.3.1",
