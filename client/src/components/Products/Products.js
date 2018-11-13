@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../API/index.js";
 import ProductModal from "./ProductModal";
 import {
-    Card, CardText, CardBody, CardDeck,
+    Card, CardText, CardBody,
     CardTitle, Row, Col, Button
 } from 'reactstrap';
 
@@ -31,9 +31,6 @@ export default class Products extends Component {
 
     userSearch = (event) => {
         event.preventDefault();
-        this.setState({
-            productList: ""
-        });
         API.userSearch(this.state.userQuery)
             .then(res =>
                 this.setState({
@@ -41,6 +38,10 @@ export default class Products extends Component {
                 })
             )
             .catch(err => console.log(err));
+
+        this.setState({
+            productList: ""
+        });
     }
 
     render() {
@@ -60,19 +61,17 @@ export default class Products extends Component {
                         <Button onClick={this.userSearch}>Search!</Button>
                     </Col>
                     <Row>
-                        <CardDeck>
-                            {this.state.productList.map(result => (
-                                <Col sm="3" key={result._id}>
-                                    <Card>
-                                        <CardBody className="card-body">
-                                            <CardTitle>{result.product}</CardTitle>
-                                            <CardText><strong>{result.price}</strong></CardText>
-                                            <ProductModal result={result} />
-                                        </CardBody>
-                                    </Card>
-                                </Col>
-                            ))}
-                        </CardDeck >
+                        {this.state.productList.map(item => (
+                            <Col sm="3" key={item._id}>
+                                <Card>
+                                    <CardBody className="card-body">
+                                        <CardTitle>{item.product}</CardTitle>
+                                        <CardText><strong>{item.price}</strong></CardText>
+                                        <ProductModal result={item} />
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                        ))}
                     </Row>
 
 

@@ -8,7 +8,7 @@ const passport = require("./passport-local");
 const morgan = require("morgan");
 const app = express();
 const MongoStore = require("connect-mongo")(session);
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3111;
 
 
 mongoose.promise = Promise;

@@ -24,7 +24,7 @@ router.get("/:id", function(req,res){
     })
 });
 
-router.get("/:query", function(req,res){
+router.get("api/products/:query", function(req,res){
     db.Item.find({ name: req.params.query }, function (err, response) {
         if (err) {
             console.log(err);
