@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Products from "../Products/Products.js";
 import "./Home.css";
 
 class Home extends Component {
@@ -16,8 +17,15 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                <br /><br /><br />
+                <div>
+
+                    <Products />
+
+                </div>
 
             </div>
+
         );
     }
 }
