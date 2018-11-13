@@ -1,18 +1,25 @@
 import axios from "axios";
 
 const API = {
+    isLoggedIn:function(){
+        return axios.get("/api/auth")
+    },
     signup:function(newUser){
         return axios.post("/api/signup", newUser) 
     },
     login:function(login){
-        return axios.post("/api/login", {email:login.email, password:login.password})
+        return axios.post("/api/login", {username:login.username, password:login.password})
     },
-    logOut:function(){
-        return axios.post("/");
+    logout:function(){
+        return axios.post("/api/logout");
     },
     getUser:function(id){
         console.log("Getting user");
-        return axios.get("/api/user" + id);
+        return axios.get("/api/user/" + id);
+    },
+    getUserSession:function(id){
+        console.log("Getting user session");
+        return axios.get("/api/user/");
     },
     createUsers:function(data){
         console.log("Creating User");

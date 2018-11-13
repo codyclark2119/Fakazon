@@ -1,18 +1,14 @@
 import React, {Component} from "react";
-import API from "../../API/index.js";
-
 export default class Login extends Component {
     state = {
-        email:"",
+        username:"",
         password:""
     }
 
     handleLogin = (event) => {
         event.preventDefault();
         console.log("I'm logging in baby", this.state);
-        API.login(this.state).then(function(response){
-            console.log(response);
-        })
+        this.props.handleLogin(this.state)
     }
 
     captureInput = (event) => {
@@ -26,14 +22,12 @@ export default class Login extends Component {
             <div className="container-fluid">
             <form>
                 <div className="form-group">
-                    <label>Email address</label>
+                    <label>Username</label>
                     <input 
-                        name="email" 
-                        type="email" 
+                        name="username" 
+                        type="name" 
                         className="form-control" 
-                        id="exampleInputEmail1" 
-                        aria-describedby="emailHelp" 
-                        placeholder="Enter email" 
+                        placeholder="Enter username" 
                         onChange={this.captureInput} 
                     />
                 </div>

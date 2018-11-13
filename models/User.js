@@ -2,10 +2,16 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt")
 const Schema = mongoose.Schema;
 const SALT_WORK_FACTOR = 10;
+mongoose.promise = global.Promise;
 
 const userSchema = new Schema({
+<<<<<<< HEAD
   email: { type: String, required: true, index:{unique:true} },
   password: { type: String, required:true },
+=======
+  username: { type: String, required: true, index:{unique:true} },
+  password: { type: String, required:true }
+>>>>>>> d469760049d398cbaa08fce0b6a51f0df9566574
 });
 
 userSchema.pre('save', function(next) {
@@ -29,12 +35,16 @@ userSchema.pre('save', function(next) {
   });
 });
 
-userSchema.methods.comparePassword = function(candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-      if (err) return cb(err);
-      cb(null, isMatch);
-  });
+userSchema.methods.checkPassword = function(candidatePassword) {
+ return bcrypt.compareSync(candidatePassword, this.password) 
 };
+
+// userSchema.methods.comparePassword = function(candidatePassword, cb) {
+//   bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+//       if (err) return cb(err);
+//       cb(null, isMatch);
+//   });
+// };
 
 const User = mongoose.model("User", userSchema);
 

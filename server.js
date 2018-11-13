@@ -2,10 +2,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const db = require("./models");
 const itemSeed = require("./seed/seed.js");
-
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const passport = require("./passport-local");
+const morgan = require("morgan");
 const app = express();
-
+const MongoStore = require("connect-mongo")(session);
 const PORT = process.env.PORT || 3001;
+
+
+mongoose.promise = Promise;
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fakazondb");
 
 // Defining middleware
 app.use(express.urlencoded({ extended: true }));
@@ -13,8 +20,17 @@ app.use(express.json());
 
 app.use(express.static("client/public"));
 
+app.use(cookieParser());
+app.use(session({ 
+  secret: 'keyboard cat',
+    store: new MongoStore({ mongooseConnection: mongoose.connection}),
+    resave: false,
+    saveUninitialized: false
+ }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fakazondb");
 
 db.Item
   .remove({})
@@ -34,7 +50,9 @@ db.Cart
     process.exit(1);
   });
 
+app.use(morgan("dev"));
 const Routes = require("./routes/index.js")
+// require("./passport-local")
 app.use(Routes);
 
 // Start the API server
