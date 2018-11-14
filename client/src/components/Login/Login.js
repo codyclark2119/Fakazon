@@ -9,7 +9,7 @@ export default class Login extends Component {
     handleLogin = (event) => {
         event.preventDefault();
         this.props.handleLogin(this.state)
-        window.location.replace("/")
+         window.location.replace("/")
     }
 
     captureInput = (event) => {

@@ -5,7 +5,6 @@ import Login from "./components/Login/Login.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import Home from "./components/Home/Home.js";
 import Signup from "./components/Signup/Signup.js";
-import Profile from "./components/Profile/Profile.js";
 import Products from "./components/Products/Products.js";
 import CartBar from "./components/CartBar/CartBar.js";
 import API from "./API/";
@@ -33,15 +32,15 @@ class App extends Component {
 
   getUser = () => {
     API.getUser().then(response => {
-      // console.log(response.data)
+       console.log(response.data)
       if (response.data.user) {
-        // console.log("User in session")
+         console.log("User in session")
         this.setState({
           isLoggedIn: true,
           user: response.data.user.username
         })
       } else {
-        // console.log("No user in session");
+         console.log("No user in session");
         this.setState({
           isLoggedIn: false,
           username: null
@@ -74,7 +73,6 @@ class App extends Component {
             <Route exact path="/login" component={() => 
               (<Login handleLogin={this.handleLogin} />)} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/profile" component={Profile}/>
             <Route exact path="/products" component={Products} />
           </div>
         </Router>

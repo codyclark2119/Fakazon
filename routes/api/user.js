@@ -5,6 +5,7 @@ const db = require("../../models/index.js");
 router.get("/", (req, res, next) => {
     if (req.user) {
         res.json({ user: req.user })
+        console.log(req.user);
     } else {
         res.json({ user: null })
     }
