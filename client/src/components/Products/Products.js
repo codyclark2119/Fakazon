@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../API/index.js";
 import List from "./ProductList.js";
+import "./Products.css";
 
 export default class Products extends Component {
     state = {
@@ -23,7 +24,7 @@ export default class Products extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container pmargin">
                 <List productList={this.state.productList} />
             </div>
         )

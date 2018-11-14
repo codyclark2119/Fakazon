@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Collapse,
   Navbar,
@@ -6,10 +6,12 @@ import {
   Nav,
   NavItem,
   NavLink,
-} from 'reactstrap';
+} from "reactstrap";
+
+import "./Navbar.css";
 import API from '../../API';
 
-export default class Example extends React.Component {
+export default class Navi extends React.Component {
   constructor(props) {
     super(props);
 
@@ -18,14 +20,12 @@ export default class Example extends React.Component {
       isOpen: false
     };
   }
+  
   logout = () => {
-    console.log("I'm logging out, darlin");
     API.logout().then((response) => {
-      console.log(response);
-        // this.setState({
-        //   isLoggedIn: false,
-        //   user: ""
-        // })
+    }).catch(error => {
+        // console.log("Logout error")
+        console.log(error)
     })
   }
 
@@ -34,31 +34,56 @@ export default class Example extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-  render() {
+
+
+ 
+  
+  render() { 
+
+  const userLinks = (
+    <div>
+      <Nav className="mx-auto" navbar>
+        <NavItem>
+            <NavLink href="/" onClick={this.logout}>
+            <i className="fas fa-sign-out-alt"></i> Logout</NavLink>
+          </NavItem>
+                    
+          <NavItem>
+            <NavLink href="/products">
+            <i className="fas fa-briefcase"></i> Products</NavLink>
+          </NavItem>               
+      </Nav>
+    </div>
+  );
+
+  const noUserLinks = (
+    <div>
+      <Nav className="mx-auto" navbar>
+          <NavItem>
+              <NavLink href="/signup">
+              <i className="fas fa-user-plus"></i> Sign Up</NavLink>
+          </NavItem>
+
+          <NavItem>
+            <NavLink href="/login">
+            <i className="fas fa-sign-in-alt"></i> Login</NavLink>
+          </NavItem>  
+      </Nav>                
+    </div>
+  );
+
+    const isLoggedIn = this.props.isLoggedIn;
+
     return (
       <div>
-        <Navbar id="navgreen" color="light" light expand="md">
+        <Navbar className="navgreen" color="light" light expand="md">
   
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="mx-auto" navbar>
-              <NavItem>
-                <NavLink href="/">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/signup">Sign Up</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/login">Login</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/logout" onClick={this.logout}>Logout</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/products">Products</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
+            <Collapse isOpen={this.state.isOpen} navbar>
+                <div>
+                    {isLoggedIn ? userLinks : noUserLinks}
+                </div>
+            </Collapse>
         </Navbar>
       </div>
     );

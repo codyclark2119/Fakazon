@@ -13,24 +13,10 @@ const API = {
     logout:function(){
         return axios.post("/api/logout");
     },
-    getUser:function(id){
-        console.log("Getting user");
-        return axios.get("/api/user/" + id);
-    },
-    getUserSession:function(id){
-        console.log("Getting user session");
-        return axios.get("/api/user/");
-    },
-    createUsers:function(data){
-        console.log("Creating User");
-        return axios.get("/api/users", data);
-    },
-    updateUser:function(data){
-        console.log("Updating User");
-        return axios.put("/api/users/update", data);
+    getUser:function(){
+        return axios.get("/api/user");
     },
     getItems:function(){
-        console.log("Getting product List");
         return axios.get("/api/products");
     }
 }

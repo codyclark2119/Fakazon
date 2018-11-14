@@ -7,8 +7,8 @@ export default class Login extends Component {
 
     handleLogin = (event) => {
         event.preventDefault();
-        console.log("I'm logging in baby", this.state);
         this.props.handleLogin(this.state)
+        window.location.replace("/")
     }
 
     captureInput = (event) => {
@@ -19,7 +19,7 @@ export default class Login extends Component {
 
     render(){
         return(
-            <div className="container-fluid">
+            <div className="col-md-6 container-fluid">
             <form>
                 <div className="form-group">
                     <label>Username</label>
@@ -44,7 +44,7 @@ export default class Login extends Component {
                 </div>
                     <button 
                         type="submit" 
-                        className="btn btn-primary" 
+                        className="btn btn-success" 
                         onClick={this.handleLogin}>Submit
                     </button>
             </form>
