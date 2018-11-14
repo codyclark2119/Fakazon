@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+
 export default class Login extends Component {
     state = {
         username:"",
@@ -19,7 +20,7 @@ export default class Login extends Component {
 
     render(){
         return(
-            <div className="col-md-6 container-fluid">
+            <div className="col-md-6 container-fluid fmargin">
             <form>
                 <div className="form-group">
                     <label>Username</label>

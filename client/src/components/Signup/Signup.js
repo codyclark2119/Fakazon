@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import API from "../../API/index.js";
+import "./Signup.css";
 
 export default class Signup extends Component {
     state = {
@@ -29,7 +30,7 @@ export default class Signup extends Component {
       
     render(){
         return(
-            <div className="col-md-6 container-fluid">
+            <div className="col-md-6 container-fluid fmargin">
                 <form>
                     <div className="form-group">
                         <label>Username</label>
