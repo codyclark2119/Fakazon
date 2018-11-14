@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import Products from "../Products/Products.js";
+=======
+
+>>>>>>> 4c8be427a0b4f92e23b41b42e297007485c30c48
 import "./Home.css";
 
+
 class Home extends Component {
+<<<<<<< HEAD
     render() {
         return (
 
@@ -27,6 +33,18 @@ class Home extends Component {
             </div>
 
         );
+=======
+
+ render() {
+      return (
+          
+       <div>
+            <div className="view overlay rounded-top">
+                <img src={require("../../images/shopping.jpg")} className="img-fluid" alt="Shoppers"/>
+            </div>
+       </div>
+      );
+>>>>>>> 4c8be427a0b4f92e23b41b42e297007485c30c48
     }
 }
 

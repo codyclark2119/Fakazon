@@ -13,6 +13,7 @@ const API = {
     logout:function(){
         return axios.post("/api/logout");
     },
+<<<<<<< HEAD
     getUser:function(id){
         console.log("Getting user");
         return axios.get("/api/user/" + id);
@@ -28,9 +29,12 @@ const API = {
     updateUser:function(data){
         console.log("Updating User");
         return axios.put("/api/user/update", data);
+=======
+    getUser:function(){
+        return axios.get("/api/user");
+>>>>>>> 4c8be427a0b4f92e23b41b42e297007485c30c48
     },
     getItems:function(){
-        console.log("Getting product List");
         return axios.get("/api/products");
     },
     addToCart:function(data){

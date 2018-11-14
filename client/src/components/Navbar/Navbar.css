@@ -1,12 +1,3 @@
-#navgreen {
-    background-color: 
-    #6cc044 !important;
-}
-
-.navbar-brand {
-font-family: 'IM Fell Great Primer', serif;
-}
-
-h1.display-3, p.lead {
-color: white !important;
+.navgreen{
+    background-color: #0ad10e !important;
 }

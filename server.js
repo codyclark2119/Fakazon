@@ -14,7 +14,6 @@ const PORT = process.env.PORT || 3111;
 mongoose.promise = Promise;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fakazondb");
 
-// Defining middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -30,7 +29,6 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-// Connect to the Mongo DB
 
 db.Item
   .remove({})
@@ -51,11 +49,10 @@ db.Cart
   });
 
 app.use(morgan("dev"));
+
 const Routes = require("./routes/index.js")
-// require("./passport-local")
 app.use(Routes);
 
-// Start the API server
 app.listen(PORT, function() {
   console.log(`Server now listening on PORT ${PORT}!`);
 });

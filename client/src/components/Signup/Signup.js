@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import API from "../../API/index.js";
+import "./Signup.css";
 
 export default class Signup extends Component {
     state = {
@@ -9,9 +10,16 @@ export default class Signup extends Component {
     
     handleSignUp = (event) => {
         event.preventDefault();
-        console.log("I'm signing up baby", this.state);
         API.signup(this.state).then(function(response){
             console.log(response);
+            if (!response.data.errmsg) {
+                // console.log('successful signup')
+                window.location.replace("/login")
+            }
+        }).catch(error => {
+            // console.log("Sign in error")
+            console.log(error)
+
         })
     }
     captureInput = (event) => {
@@ -22,7 +30,7 @@ export default class Signup extends Component {
       
     render(){
         return(
-            <div className="container-fluid">
+            <div className="col-md-6 container-fluid fmargin">
                 <form>
                     <div className="form-group">
                         <label>Username</label>
@@ -48,7 +56,7 @@ export default class Signup extends Component {
                     </div>
                         <button 
                             type="submit" 
-                            className="btn btn-primary" 
+                            className="btn btn-success" 
                             onClick={this.handleSignUp}>Submit
                         </button>
                 </form>
