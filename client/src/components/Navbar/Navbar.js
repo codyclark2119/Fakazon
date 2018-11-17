@@ -39,6 +39,9 @@ export default class Navi extends React.Component {
  
   
   render() { 
+      const isLoggedIn = this.props.isLoggedIn;
+      console.log("navbar render, props:");
+      console.log(this.props);
 
   const userLinks = (
     <div>
@@ -72,7 +75,6 @@ export default class Navi extends React.Component {
     </div>
   );
 
-    const isLoggedIn = this.props.isLoggedIn;
 
     return (
       <div>
