@@ -24,13 +24,15 @@ router.get("/:id", function(req,res){
     })
 });
 
-router.get("api/products/:query", function(req,res){
-    db.Item.find({ name: req.params.query }, function (err, response) {
+router.get("/products/:query", function(req,res){
+    let query = req.params.query;
+    db.Item.find().where({ product: query }).exec( function (err, response) {
         if (err) {
             console.log(err);
             res.send(err);
         }
         res.json(response)
+        console.log(response);
     })
 });
 

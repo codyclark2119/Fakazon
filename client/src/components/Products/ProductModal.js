@@ -23,18 +23,20 @@ class ProductModal extends React.Component {
 
   captureInput = (event) => {
     this.setState({
-        [event.target.name]:event.target.value
+      [event.target.name]: event.target.value
     });
   }
 
   addToCart = () => {
-    API.addToCart({ product: this.props.result.product,
+    API.addToCart({
+      product: this.props.result.product,
       price: this.props.result.price,
-      amount: this.state.amount })
+      amount: this.state.amount
+    })
       .then(function (response) {
         console.log(response);
       });
-      this.toggle();
+    this.toggle();
   }
 
   render() {

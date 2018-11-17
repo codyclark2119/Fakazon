@@ -31,13 +31,13 @@ const API = {
         console.log("Deleting Item from cart");
         return axios.delete("/api/cart/" + id)
     }, 
-    clearCart:function(id){
+    clearCart:function(){
         console.log("Clearing Cart");
         return axios.delete("/api/cart/")
     },
     userSearch:function(query){
         console.log("Searching for " + query);
-        return axios.get("/api/products/" + query)
+        return axios.get("/api/products", { params: { q: query}})
     }
 }
 
