@@ -34,7 +34,7 @@ export default class Products extends Component {
         event.preventDefault();
         API.userSearch(this.state.userQuery)
             .then(res => {
-                this.setState({ productList: res.data });
+                this.setState({ searchResults: res.data });
             })
             .catch(err => this.setState({ error: err.message }));
 
@@ -65,7 +65,8 @@ export default class Products extends Component {
                 <Row>
                     <div id="results">
                         <ProductList
-                            productList={this.state.productList}/>
+                            productList={this.state.productList}
+                            searchResults={this.state.searchResults}/>
                     </div>
                 </Row>
 
