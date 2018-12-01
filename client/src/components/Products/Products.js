@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import API from "../../API/index.js";
-import ProductModal from "./ProductModal.js"
+import ProductList from "./ProductList.js"
 import {
     Row, Col, Button,
-    Card, CardText, CardBody,
-    CardTitle,
 } from 'reactstrap';
 
 export default class Products extends Component {
@@ -36,12 +34,11 @@ export default class Products extends Component {
         event.preventDefault();
         API.userSearch(this.state.userQuery)
             .then(res => {
-                this.setState({ searchResults: res.data });
+                this.setState({ productList: res.data });
             })
             .catch(err => this.setState({ error: err.message }));
 
     }
-
 
     render() {
         return (
@@ -67,17 +64,8 @@ export default class Products extends Component {
 
                 <Row>
                     <div id="results">
-                        {this.state.productList.map((item, index) => (
-                            <Col sm="4" key={index}>
-                                <Card >
-                                    <CardBody className="card-body">
-                                        <CardTitle>{item.product}</CardTitle>
-                                        <CardText><strong>{item.price}</strong></CardText>
-                                        <ProductModal result={item} />
-                                    </CardBody>
-                                </Card>
-                            </Col>))}
-
+                        <ProductList
+                            productList={this.state.productList}/>
                     </div>
                 </Row>
 
