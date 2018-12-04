@@ -37,7 +37,7 @@ const API = {
     },
     userSearch:function(query){
         console.log("Searching for " + query);
-        return axios.get("/api/products", { params: { q: query}})
+        return axios.get(`/api/products/search/${query}`)
     }
 }
 

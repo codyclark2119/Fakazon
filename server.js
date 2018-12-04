@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fakazondb");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("client/public"));
+app.use("/static", express.static("client/public"));
 
 app.use(cookieParser());
 app.use(session({ 

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import "./Products.css";
 import API from "../../API/index.js";
-import ProductList from "./ProductList.js"
+import ProductList from "./ProductList.js";
+import Searchbar from "../Searchbar/Searchbar.js";
 import {
-    Row, Col, Button,
+    Row, Navbar, Col
 } from 'reactstrap';
 
 export default class Products extends Component {
@@ -10,7 +12,6 @@ export default class Products extends Component {
     state = {
         productList: [],
         userQuery: "",
-        searchResults: [],
         error: ""
     };
 
@@ -26,49 +27,49 @@ export default class Products extends Component {
 
     captureInput = (event) => {
         this.setState({
-            userQuery: event.target.value
+            [event.target.name]: event.target.value
         })
+
     }
 
     userSearch = (event) => {
         event.preventDefault();
         API.userSearch(this.state.userQuery)
             .then(res => {
-                this.setState({ searchResults: res.data });
+                console.log(res.data)
+                this.setState({ productList: res.data });
             })
             .catch(err => this.setState({ error: err.message }));
-
     }
 
     render() {
         return (
-            <div className="container">
+            <div className="container-fluid thenav">
+                <Navbar className="navgreen clearfix" color="light" light expand="lg">
+                    <Col xs="3">{" "}</Col>
 
-                <Row>
-                    <Col xs="8">
-                        <input
-                            name="userQuery"
-                            value={this.state.userQuery}
-                            type="name"
-                            className="form-control"
-                            placeholder="What are you looking for?"
-                            onChange={this.captureInput} />
-                    </Col>
-                    <Col xs="4">
-                        <Button onClick={this.userSearch}>Search!</Button>
-                    </Col>
 
-                </Row>
+                    <Searchbar
+                        className="float-right"
+                        userQuery={this.state.userQuery}
+                        captureInput={this.captureInput}
+                        userSearch={this.userSearch} />
+                </Navbar>
 
-                <br /><br />
+                <div className="view overlay rounded-top">
+                    <img src={require("../../images/shopping.jpg")} width="100%" className="img-fluid" alt="Shoppers" />
+                </div>
 
-                <Row>
-                    <div id="results">
+                <br />
+
+                <div id="container-fluid">
+
+                    <Row>
                         <ProductList
                             productList={this.state.productList}
-                            searchResults={this.state.searchResults}/>
-                    </div>
-                </Row>
+                            searchResults={this.state.searchResults} />
+                    </Row>
+                </div>
 
             </div>
         )

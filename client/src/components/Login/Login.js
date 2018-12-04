@@ -8,8 +8,8 @@ export default class Login extends Component {
 
     handleLogin = (event) => {
         event.preventDefault();
-        this.props.handleLogin(this.state)
-        window.location.reload("/");
+        this.props.handleLogin(this.state);
+        window.location.assign("/");
     }
 
     captureInput = (event) => {
@@ -46,6 +46,7 @@ export default class Login extends Component {
                     <button 
                         type="submit" 
                         className="btn btn-success" 
+                        href="/"
                         onClick={this.handleLogin}>Submit
                     </button>
             </form>

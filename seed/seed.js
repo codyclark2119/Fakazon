@@ -4,8 +4,8 @@ const itemSeed = [
         seller: "LEGO",
         price: "29.99",
         description: "Build 24 different presents, including vehicles, minifigures and seasonal items with this fun advent calendar with toys",
-        photoLink: "./assets/1",
-        categories: ["Toys"],
+        photoLink: "/static/photos/1.jpg",
+        categories: ["Toys", "Lego"],
         stock: "0"
     },
     {
@@ -13,8 +13,8 @@ const itemSeed = [
         seller: "Amazon",
         price: "39.99",
         description: "Enjoy tens of thousands of channels, apps, and Alexa skills with access to over 500,000 movies and TV episodes.",
-        photoLink: "./assets/2",
-        categories: ["Electronics"],
+        photoLink: "/static/photos/2.jpg",
+        categories: ["Electronics", "Television"],
         stock: "0"
     },
     {
@@ -22,7 +22,7 @@ const itemSeed = [
         seller: "FujiFilm",
         price: "20.75",
         description: "Designed for use with Instax Mini line of cameras. Works well in low light",
-        photoLink: "./assets/3",
+        photoLink: "static/photos/3.jpg",
         categories: ["Photo"],
         stock: "0"
     },
@@ -31,8 +31,8 @@ const itemSeed = [
         seller: "Wyze Labs",
         price: "27.98",
         description: "1080p full HD live stream direct to your smartphone day or night with night vision (up to 30 feet away).",
-        photoLink: "./assets/4",
-        categories: ["Photo", "Electronics"],
+        photoLink: "static/photos/4.jpg",
+        categories: ["Photo", "Electronics", "Home"],
         stock: "0"
     },
     {
@@ -40,8 +40,8 @@ const itemSeed = [
         seller: "Rockstar Games",
         price: "59.99",
         description: "Developed by the creators of Grand Theft Auto V and Red Dead Redemption, Red Dead Redemption 2 is an epic tale of life in America’s unforgiving heartland.",
-        photoLink: "./assets/5",
-        categories: ["Video Games", "Electronics"],
+        photoLink: "static/photos/5.jpg",
+        categories: ["Video Games", "Electronics", "Playstation"],
         stock: "0"
     },
     {
@@ -49,8 +49,8 @@ const itemSeed = [
         seller: "Vtech",
         price: "44.99",
         description: "The Touch and learn activity desk deluxe is an interactive desk and includes five activity pages to explore that are filled with engaging content",
-        photoLink: "./assets/6",
-        categories: ["Toys"],
+        photoLink: "static/photos/6.jpg",
+        categories: ["Toys", "Kids"],
         stock: "0"
     },
     {
@@ -58,8 +58,8 @@ const itemSeed = [
         seller: "Ring",
         price: "99.99",
         description: "Stay connected to home with motion-activated alerts, HD video and two-way talk from Ring Video Doorbell. Get alerts on your phone, tablet and PC when anyone comes to your door, so you can see, hear and speak to visitors from anywhere.",
-        photoLink: "./assets/7",
-        categories: ["Photo", "Electronics"],
+        photoLink: "static/photos/7.jpg",
+        categories: ["Photo", "Electronics", "Home"],
         stock: "0"
     },
     {
@@ -67,8 +67,8 @@ const itemSeed = [
         seller: "Samsung",
         price: "847.99",
         description: "Loaded with features, the NU8000 has advanced smart browsing with voice control, which finds your shows easily. Stunning depth of HDR plus more colors than HDTVs create a breathtaking 4K picture.",
-        photoLink: "./assets/8",
-        categories: ["Electronics"],
+        photoLink: "static/photos/8.jpg",
+        categories: ["Electronics", "Television"],
         stock: "0"
     },
     {
@@ -76,8 +76,8 @@ const itemSeed = [
         seller: "Nintendo",
         price: "299.00",
         description: "Introducing Nintendo Switch, the new home video game system from Nintendo. In addition to providing single and multiplayer thrills at home, the Nintendo Switch system can be taken on the go so players can enjoy a full home console experience anytime, anywhere. The mobility of a handheld is now added to the power of a home gaming system, with unprecedented new play styles brought to life by the two new Joy-Con controllers.",
-        photoLink: "./assets/9",
-        categories: ["Video Games", "Electronics"],
+        photoLink: "static/photos/9.jpg",
+        categories: ["Video Games", "Electronics", "Nintendo"],
         stock: "0"
     },
     {
@@ -85,7 +85,7 @@ const itemSeed = [
         seller: "Crayola",
         price: "19.95",
         description: "The Silly Scents Sticker Set Includes: Sticker Maker, 10 Line Art Sheets, 20 Adhesive Sheets, 6 Silly Scents Mini Markers, 3 Scent Sticks, and Instructions",
-        photoLink: "./assets/10",
+        photoLink: "static/photos/10.jpg",
         categories: ["Toys"],
         stock: "0"
     },
@@ -94,8 +94,8 @@ const itemSeed = [
         seller: "2K",
         price: "39.99",
         description: "NBA 2K celebrates 20 years of redefining what sports gaming can be, from best in class gameplay to groundbreaking game modes and an immersive open-world 'Neighborhood.' NBA 2K19 continues to push limits as it brings gaming one step closer to real-life basketball excitement and culture.",
-        photoLink: "./assets/11",
-        categories: ["Electronics", "Video Games"],
+        photoLink: "static/photos/11.jpg",
+        categories: ["Electronics", "Video Games", "Playstation"],
         stock: "0"
     },
     {
@@ -103,7 +103,7 @@ const itemSeed = [
         seller: "NIX",
         price: "79.99",
         description: "Designed to keep all your precious memories in one place. NIX Advance frames allow you to play HD videos and photos in the same Slideshow. 720p HD Video Formats: MP4 (H.264 HD 720p AAC).Fast processor: View thousands of photos and videos from your inserted USB stick or SD/SDHC card.",
-        photoLink: "./assets/12",
+        photoLink: "static/photos/12.jpg",
         categories: ["Photo", "Electronics"],
         stock: "0"
     },
@@ -112,8 +112,8 @@ const itemSeed = [
         seller: "Epson",
         price: "189.98",
         description: "Epson Perfection V600 Color Photo, Image, Film, Negative & Document Scanner - Corded. Create extraordinary enlargements from film — 6400 x 9600 dpi for enlargements up to 17 x 22. Scan slides, negatives and medium-format panoramic film — built-in Transparency Unit. ",
-        photoLink: "./assets/13",
-        categories: ["Photo", "Electronics"],
+        photoLink: "static/photos/13.jpg",
+        categories: ["Photo", "Electronics", "Computer"],
         stock: "0"
     },
     {
@@ -121,7 +121,7 @@ const itemSeed = [
         seller: "Matchbox",
         price: "79.95",
         description: "Disney/Pixar's Cars Mega Mack transforming truck. 2 exciting ways to play: as a push around truck and a racetrack. A launcher starts the action and the course is banked for extra challenge. Lights and sounds add realistic affects",
-        photoLink: "./assets/14",
+        photoLink: "static/photos/14.jpg",
         categories: ["Toys"],
         stock: "0"
     },
@@ -130,7 +130,7 @@ const itemSeed = [
         seller: "Anki",
         price: "179.00",
         description: "Cozmo’s a supercomputer and loyal sidekick all at once. Thanks to artificial intelligence, Cozmo can express hundreds of emotions. From curious to clever, persistent to playful, he has personality x 10. He knows your name, face, and quirks. And best of all, he continues to evolve the more you hang out.",
-        photoLink: "./assets/15",
+        photoLink: "static/photos/15.jpg",
         categories: ["Toys", "Electronics"],
         stock: "0"
     },
@@ -139,17 +139,17 @@ const itemSeed = [
         seller: "Nintendo",
         price: "99.99",
         description: "Take your favorite Pokémon out for a stroll in Poké Ball Plus. Share your adventure with family or friends in 2-player action using a second Joy-Con or Poké Ball Plus (sold separately). Every accessory contains the Mythical Pokémon Mew!** You can even connect to the Pokémon GO app* using a compatible smartphone to bring over Pokémon originally discovered in the Kanto region!",
-        photoLink: "./assets/16",
-        categories: ["Video Games", "Electronics"],
+        photoLink: "static/photos/16.jpg",
+        categories: ["Video Games", "Electronics", "Nintendo"],
         stock: "0"
     },
     {
-        product: "Overkill's The Walking Dead - PlayStation 4",
+        product: "Overkill's The Walking Dead",
         seller: "505 Games",
         price: "59.99",
         description: "Overkill's the Walking Dead is all about tension and fear. Actions have consequences and every sound you make risk pulling the horde closer. Sometimes a knife is better than a gun.",
-        photoLink: "./assets/17",
-        categories: ["Video Games", "Electronics"],
+        photoLink: "static/photos/17.jpg",
+        categories: ["Video Games", "Electronics", "Playstation"],
         stock: "0"
     },
     {
@@ -157,7 +157,7 @@ const itemSeed = [
         seller: "WolVol",
         price: "28.94",
         description: "20'' Long Truck, includes 6 semi metal cars and has space to carry up to 28 cars",
-        photoLink: "./assets/19",
+        photoLink: "static/photos/18.jpg",
         categories: ["Toys"],
         stock: "0"
     },
@@ -166,8 +166,107 @@ const itemSeed = [
         seller: "ASUS",
         price: "799.00",
         description: "ASUS VivoBook S Thin & Light Laptop, 14 inch FHD, Intel Core i7-8550U, 8GB RAM, 256GB SSD, GeForce MX150, NanoEdge Display, Backlit Kbd, FP Sensor - S410UN-NS74",
-        photoLink: "./assets/20",
-        categories: ["Electronics"],
+        photoLink: "static/photos/19.jpg",
+        categories: ["Electronics", "Computer"],
+        stock: "0"
+    },
+    {
+        product: "Fintie Carry Case for Nintendo Switch",
+        seller: "Fintie",
+        price: "10.39",
+        description: "Designed to make your Nintendo Switch console and accessories more portable & travel-friendly. This carrying case fits Switch Console with both Joy-Con attached on.",
+        photoLink: "static/photos/20.jpg",
+        categories: ["Video Games", "Nintendo"],
+        stock: "0"
+    },
+    {
+        product: "MY HERO One’s Justice",
+        seller: "Bandai Namco",
+        price: "49.95",
+        description: "PLUS ULTRA! - Based on the hit weekly Shonen Jump manga series HEROES OR VILLAINS - Choose between fan favorite characters like Deku, All Might, Tomura, and many more in your path to justice",
+        photoLink: "static/photos/21.jpg",
+        categories: ["Video Games", "Xbox"],
+        stock: "0"
+    },
+    {
+        product: "Super Smash Bros. Ultimate",
+        seller: "Nintendo",
+        price: "59.95",
+        description: "Challenge others anytime, anywhere, whether you’re on the couch or on the go. Play any way you want—locally, online, in TV mode, Tabletop mode, Handheld mode, or even with GameCube Controllers",
+        photoLink: "static/photos/22.jpg",
+        categories: ["Video Games", "Nintendo"],
+        stock: "0"
+    },
+    {
+        product: "Portal from Facebook. Hands-Free Video Calling with Alexa Built-in",
+        seller: "Facebook",
+        price: "99.95",
+        description: "Move and talk freely with Smart Camera: With Smart Camera, you don’t have to worry about being out of frame. Whether you’re moving around the kitchen, prepping dinner or chasing the kids through the living room, Smart Camera adjusts to follow the action. And as more people enter a room, Smart Camera automatically widens to keep everyone in view, so you don’t miss a moment",
+        photoLink: "static/photos/23.jpg",
+        categories: ["Electronics", "Home", "Photo"],
+        stock: "0"
+    },
+    {
+        product: "DubeeBaby Yoga Socks, Women’s Non Slip Anti-Skid Pilate Grip Socks",
+        seller: "DubeeBaby",
+        price: "10.95",
+        description: "3D Gel dots on the sole of the bottom,shock absorption, cushioning and stability.it is very easy to grip and keep people safety when do the yoga or pilates while traveling, at the studio, or at home.Extends fully from heel to toe, giving you enhanced balance and stability.",
+        photoLink: "static/photos/24.jpg",
+        categories: ["Clothes", "Home"],
+        stock: "0"
+    },
+    {
+        product: "G4Free Wooden Hook Handle Classic Golf Umbrella",
+        seller: "G4Free",
+        price: "15.39",
+        description: "Windproof Auto Open 52 inch Large Oversized Double Canopy Vented Rainproof Cane Stick Umbrellas. Suitable for golf course, daily commuting, luxury hotel and so on; Strong business style make you look smart and wise.",
+        photoLink: "static/photos/25.jpg",
+        categories: ["Outdoors", "Home"],
+        stock: "0"
+    },
+    {
+        product: "Celestron PowerSeeker 127EQ Telescope",
+        seller: "Celestron",
+        price: "199.95",
+        description: "1000mm Focal Length. Fully coated glass optical components with high transmission coatings for enhanced image brightness and clarity. Comes with aluminum tripod and accessory tray.Focal Length of Eyepiece 1 (mm) 20 mm (0.79 in).Focal Length of Eyepiece 2 (mm) 4 mm (0.16 in)",
+        photoLink: "static/photos/26.jpg",
+        categories: ["Outdoors", "Home"],
+        stock: "0"
+    },
+    {
+        product: "NIVEA Men Sensitive Post Shave Balm 3.3 Fluid Ounce",
+        seller: "NIVEA",
+        price: "10.17",
+        description: "(Pack of 3) The improved extra gentle formula was specially developed for men with sensitive skin. It’s very gentle and enriched with Vitamin E and natural, soothing Chamomile and Witch Hazel extracts. It leaves skin looking healthy and cared for and feeling comfortable and smooth.",
+        photoLink: "static/photos/27.jpg",
+        categories: ["Home", "Beauty"],
+        stock: "0"
+    },
+    {
+        product: "Physicians Formula Murumuru Butter Bronzer",
+        seller: "Physicians Formula",
+        price: "5.95",
+        description: "Ultra-luxurious bronzer, infused with Murumuru Butter, delivers a radiant Brazilian goddess glow! Incredibly creamy and soft texture combines the best features of a powder and cream bronzer, to deliver a lit-from-within tropical glow unlike any other.",
+        photoLink: "static/photos/28.jpg",
+        categories: ["Beauty", "Home"],
+        stock: "0"
+    },
+    {
+        product: "Lip Smacker Disney Tsum Tsum Balms, Mickey Marshmallow Pop",
+        seller: "Lip Smacker",
+        price: "3.46",
+        description: "Dome shaped balms feature a soft topper cap that doubles as a collectible toy! Each character has their own unique flavor - collect and stack them all to create a tower of cuteness!",
+        photoLink: "static/photos/29.jpg",
+        categories: ["Beauty", "Home", "Disney"],
+        stock: "0"
+    },
+    {
+        product: "Lagunamoon Essential Oils Top 6 Gift Set Pure Essential Oils",
+        seller: "Lagunamoon",
+        price: "11.95",
+        description: "Each diffuser oil flavor carries its own unique properties. Our essential oil kits for beginners are Pure essential oils are easy to mix and match for blending or dilution purposes. The Essential Oil Sets are perfectly suitable gifts for any season.",
+        photoLink: "static/photos/30.jpg",
+        categories: ["Outdoors", "Home", "Beauty"],
         stock: "0"
     },
 ];

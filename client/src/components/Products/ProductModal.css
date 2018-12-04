@@ -1,0 +1,14 @@
+.modalImg {
+    height: 75%;
+    width: 75%;
+    margin-left: 12%;
+    max-height: 300px;
+    max-width: 350px;
+}
+
+.modalDesc {
+    border: black 4px solid;
+    font-size: 110%;
+    width: 100%;
+    padding: 4%;
+}

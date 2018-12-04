@@ -1,0 +1,30 @@
+#productImg {
+    display: grid;
+    max-height: 250px;
+    width: 100%;
+    opacity: .4;
+}
+
+#productImg:hover {
+    opacity: .8;
+}
+
+.card-body {
+    color:black;
+    border: black 3px solid;
+}
+
+.product {
+    height: 450px;
+    width: 92%;
+    margin: 5%;
+}
+
+.cardTitle {
+    font-size: 113%;
+}
+
+.cardCost {
+    font-size: 175%;
+    margin: 2%;
+}

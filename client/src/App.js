@@ -8,7 +8,6 @@ import Signup from "./components/Signup/Signup.js";
 import Products from "./components/Products/Products.js";
 import Cart from "./components/Cart/Cart.js";
 import API from "./API/";
-import CartBar from "./components/CartBar/CartBar.js";
 import './App.css';
 
 class App extends Component {
@@ -60,7 +59,7 @@ class App extends Component {
         // console.log("Login error")
         console.log(error);
     
-})
+    })
   }
 
   render() {
@@ -68,7 +67,6 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <CartBar />
             <Navbar isLoggedIn={this.state.isLoggedIn}/>     
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={() => 

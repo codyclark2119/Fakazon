@@ -1,5 +1,6 @@
 import React from 'react';
 import API from "../../API/index.js";
+import "./ProductModal.css";
 import { Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class ProductModal extends React.Component {
@@ -9,7 +10,8 @@ class ProductModal extends React.Component {
       modal: false,
       product: "",
       price: "",
-      amount: ""
+      amount: "",
+      photoLink: ""
     };
 
     this.toggle = this.toggle.bind(this);
@@ -31,7 +33,8 @@ class ProductModal extends React.Component {
     API.addToCart({
       product: this.props.result.product,
       price: this.props.result.price,
-      amount: this.state.amount
+      amount: this.state.amount,
+      photoLink: this.props.result.photoLink
     })
       .then(function (response) {
         console.log(response);
@@ -42,12 +45,14 @@ class ProductModal extends React.Component {
   render() {
     return (
       <div key={this.props.result._id}>
-        <Button color="primary" onClick={this.toggle}>Details</Button>
+        <Button color="success" onClick={this.toggle}>More Details</Button>
         <Modal isOpen={this.state.modal} fade={false} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}><p>{this.props.result.product} for <strong>{this.props.result.price}</strong></p></ModalHeader>
+          <ModalHeader toggle={this.toggle}><h3><u>{this.props.result.product} for <strong>{this.props.result.price}</strong></u></h3>
+          <p><i>Made by {this.props.result.seller}</i></p>
+          </ModalHeader>
           <ModalBody>
-            <p>Made by {this.props.result.seller}</p><br />
-            <p>{this.props.result.description}</p>
+            <img className="modalImg" src={this.props.result.photoLink} alt={this.props.result.product} />
+            <p className="modalDesc">{this.props.result.description}</p>
           </ModalBody>
           <ModalFooter>
             <div>

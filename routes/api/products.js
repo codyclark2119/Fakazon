@@ -24,15 +24,37 @@ router.get("/:id", function(req,res){
     })
 });
 
-router.get("/products/:query", function(req,res){
+router.get("/search/:query", function(req,res){
     let query = req.params.query;
-    db.Item.find().where({ product: query }).exec( function (err, response) {
+    console.log(req.params.query)
+    db.Item.find({"$or": [
+        { product: { '$regex': query, '$options': 'i' } },
+        { categories: { '$regex': query, '$options': 'i' } },
+        { description: { '$regex': query, '$options': 'i' } }
+    ]}).then( function (response, err) {
+        console.log(response)
         if (err) {
             console.log(err);
             res.send(err);
         }
+        else{
         res.json(response)
-        console.log(response);
+        }
+    })
+});
+
+router.get("/category/:query", function(req,res){
+    let query = req.params.query;
+    console.log(req.params.query)
+    db.Item.find({"category":{ "$regex": query, "$options": "i" }}).then( function (response, err) {
+        console.log(response)
+        if (err) {
+            console.log(err);
+            res.send(err);
+        }
+        else{
+        res.json(response)
+        }
     })
 });
 
