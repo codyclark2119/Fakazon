@@ -5,14 +5,14 @@ import "./Home.css";
 
 class Home extends Component {
 
- render() {
-      return (
-          
-       <div className="container-fluid">
-            <Products />
-       </div>
-      );
-    }
+     render() {
+          return (
+
+               <div className="container-fluid">
+                    <Products />
+               </div>
+          );
+     }
 }
 
 export default Home;

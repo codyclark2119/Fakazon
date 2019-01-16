@@ -5,7 +5,7 @@ const itemSeed = [
         price: "29.99",
         description: "Build 24 different presents, including vehicles, minifigures and seasonal items with this fun advent calendar with toys",
         photoLink: "/static/photos/1.jpg",
-        categories: ["Toys", "Lego"],
+        categories: ["Toys", "Lego", "Creative"],
         stock: "0"
     },
     {
@@ -267,6 +267,93 @@ const itemSeed = [
         description: "Each diffuser oil flavor carries its own unique properties. Our essential oil kits for beginners are Pure essential oils are easy to mix and match for blending or dilution purposes. The Essential Oil Sets are perfectly suitable gifts for any season.",
         photoLink: "static/photos/30.jpg",
         categories: ["Outdoors", "Home", "Beauty"],
+        stock: "0"
+    },
+    {
+        product: "Back to the Future: The Complete Adventures",
+        seller: "Universal Pictures",
+        price: "35.95",
+        description: "Great Scott! Back to the Future: The Complete Adventures pairs together the original beloved trilogy starring Michael J. Fox and Christopher Lloyd along with the complete TV series. Join Marty McFly, Doc Brown and a time traveling DeLorean for the adventure of a lifetime as they travel to the past, present and future, setting off a time-shattering chain reaction that disrupts the space-time continuum!",
+        photoLink: "static/photos/31.jpg",
+        categories: ["Movies", "Electronics", "Blu-Ray"],
+        stock: "0"
+    },
+    {
+        product: "Indiana Jones: The Complete Adventures",
+        seller: "Universal Pictures",
+        price: "34.99",
+        description: "Own all four Indiana Jones adventures in this Blu-ray collection.  This collection includes: Indiana Jones and the Raiders of the Lost Ark, Indiana Jones and the Temple of Doom, Indiana Jones and the Last Crusade, and Indiana Jones and the Kingdom of the Crystal Skull.",
+        photoLink: "static/photos/32.jpg",
+        categories: ["Movies", "Electronics", "Blu-Ray"],
+        stock: "0"
+    },
+    {
+        product: "Cowboy Bebop: The Complete Series",
+        seller: "YUTAKA MASEBA",
+        price: "39.99",
+        description: "Explore the far reaches of the galaxy in this undeniably hip series that inspired a generation – and redefined anime as an indisputable art form. See You Space Cowboy....",
+        photoLink: "static/photos/33.jpg",
+        categories: ["Movies", "Electronics", "Blu-Ray"],
+        stock: "0"
+    },
+    {
+        product: "LEGO Classic Medium Creative Brick Box 10696",
+        seller: "LEGO",
+        price: "27.99",
+        description: "Build your own vehicles and much more with this classic collection of LEGO bricks in 35 different colors",
+        photoLink: "static/photos/34.jpg",
+        categories: ["Toys", "Kids", "Creative"],
+        stock: "0"
+    },
+    {
+        product: "LEGO Marvel Super Heroes Avengers: Infinity War Sanctum Sanctorum Showdown",
+        seller: "LEGO",
+        price: "82.99",
+        description: "Build a 3-level New York City building including the Sanctum Sanctorum with an Infinity Stone, pizzeria with fire extinguisher, Peter Parker’s apartment, window exploder functions and water tower",
+        photoLink: "static/photos/35.jpg",
+        categories: ["Toys", "Kids", "Creative"],
+        stock: "0"
+    },    {
+        product: "RockBirds 22 Inch Cruiser Skateboard Complete Plastic Banana Board for Youths",
+        seller: "RockBirds",
+        price: "29.99",
+        description: "Fit for everyone: with CE certification, this well-built skateboard is safe to ride and suitable for any level of riders, no matter whether you’re a beginner or experienced rider",
+        photoLink: "static/photos/36.jpg",
+        categories: ["Toys", "Kids", "Outdoors"],
+        stock: "0"
+    },    {
+        product: "PORTER-CABLE PC1500HG 1500-Watt Heat Gun",
+        seller: "Porter-Cable",
+        price: "19.99",
+        description: "The Porter-Cable PC1500HG Heat Gun has a dual fan speed selector that delivers high and low fan speed settings. The variable temperature control dial allows for easy adjustment of temperatures. It has an integrated hands free support stand that allows the gun to sit upright for hands free use.",
+        photoLink: "static/photos/37.jpg",
+        categories: ["Tools", "Outdoors", "Adult"],
+        stock: "0"
+    },    {
+        product: "PORTER-CABLE PCC795B 20V MAX Wet/Dry Vacuum, 2 gallon",
+        seller: "Porter-Cable",
+        price: "79.99",
+        description: "The PORTER-CABLE PCC795B 20V MAX* 2-Gallon Wet/Dry Vacuum features powerful suction for quick clean ups. It offers a portable 2-gallon tank with wet/dry versatility, which allows you to use it for the usual dry clean up and can also pick up wet messes.",
+        photoLink: "static/photos/38.jpg",
+        categories: ["Tools", "Outdoors", "Adult", "Cleaning"],
+        stock: "0"
+    },
+    {
+        product: "Rabing RC Car Electric Rock Crawler Vehicle",
+        seller: "Rabing",
+        price: "68.99",
+        description: "High-quality materials and the special protection design make the car more crashproof and more resistant to shock. Make it much Super reliable and safe. With independent shockproof system, It can prevent damages caused by the vibration effectively.",
+        photoLink: "static/photos/39.jpg",
+        categories: ["Toys", "Kids", "Outdoors", "Remote Control"],
+        stock: "0"
+    },
+    {
+        product: "SOLARMKS 20 LED Romote Control Solar Flood Lights, Black",
+        seller: "Solarmks",
+        price: "32.99",
+        description: "Build your own vehicles and much more with this classic collection of LEGO bricks in 35 different colors",
+        photoLink: "static/photos/40.jpg",
+        categories: ["Outdoors", "Tools", "Home"],
         stock: "0"
     },
 ];

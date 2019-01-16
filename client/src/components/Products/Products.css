@@ -3,4 +3,16 @@
     margin-bottom: 1rem !important;
 }
 
+.productList {
+    border: black 3px solid; 
+    background-color: white;
+}
 
+.navgreen {
+    border: black 2px solid;
+}
+
+.rounded-top {
+    border: black 1px solid;
+    border-bottom: black 3px solid;
+}
